@@ -1,0 +1,19 @@
+:root {
+    --primary-color: #179c32;
+    --bory-color: #F9F9F9;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+html, body{
+    background: var(--bory-color);
+    font-family: sans-serif;    
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+}
