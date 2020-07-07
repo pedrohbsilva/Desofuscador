@@ -1,17 +1,16 @@
-//Tela do sistema para que usuária poderá entrar quando estiver logado;
-
+//Tela do sistema para realizar o desofuscamento quando o usuário estiver logado
 import React, { Component } from "react";
-import Deso from "../../components/HeaderDesforcador";
-import FormDeso from "../../components/Formdeso";
-
+import MainDecoded from "../../components/MainDecoded";
+import { Container } from "./style";
+import Navigation from "../../components/Navigation";
 
 class System extends Component {
   render() {
     return (
-      <>
-        <Deso />
-        <FormDeso></FormDeso>
-      </>
+      <Container>
+        <Navigation />
+        <MainDecoded />
+      </Container>
     );
   }
 }

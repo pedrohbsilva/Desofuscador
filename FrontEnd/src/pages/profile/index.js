@@ -5,36 +5,33 @@ import {useHistory} from 'react-router-dom'
 import { Container } from './style';
 
 
-export default function Edit() {
+export default function Profile() {
   const { id } = useParams();
   const [ user, setUser ] = useState([]);
   const [ updateName, setUpdateName ] = useState(user.name);
   const [ updateEmail, setUpdateEmail ] = useState(user.email);
-  const [ updatePassword, setUpdatePassword ] = useState(user.password);
   const history = useHistory()
   
   useEffect(()=>{
       const userId = id;
       async function load(){
           const response = await api.get(`user/${userId}`);
-          setUser(response.data)
+          setUser(response.data.user)
         } 
       load();
-  }, []);
+  }, [id]);
 
   async function handleEditUser(event){
     event.preventDefault()
     const data = {
       name: updateName,
       email: updateEmail,
-      password: updatePassword,
     }
     await api.put(`user/${id}`,data);   
-    
-    history.push('/signup');
+    history.push('/userList');
   }
   async function handleCancelUser(){
-    history.push('/signup');
+    history.push('/userList');
   }
 
   return(
@@ -44,7 +41,6 @@ export default function Edit() {
 
       <div className="donors">
         <form onSubmit={handleEditUser}>
-          
           <label>
             Nome:
             <input 
@@ -56,13 +52,6 @@ export default function Edit() {
             <input 
             defaultValue={user.email}
             onChange={event => setUpdateEmail(event.target.value)} />
-          </label>
-          <label>
-            Password:
-            <input 
-            type="password"
-            defaultValue={user.password}
-            onChange={event => setUpdatePassword(event.target.value)} />
           </label>
           <div className="buttons">
             <button onClick={ event => handleCancelUser() } >Cancelar</button>

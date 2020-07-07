@@ -13,15 +13,35 @@ export const Container = styled.div`
     font-size: 30px;
   }
 
+  p {
+    font-size: 17px;
+    margin: 15px auto;
+  }
+
   button {
     font-weight: bold;
     font-size: 15px;
-    color: #fff;
-    border: auto;
+    color: white;
+    border: 1px solid gray;
     background: var(--primary-color);
     padding: 8px 16px;
     border-radius: 5px;
     cursor: pointer;
-    margin-bottom: 40px;
+    margin: 0 6px 40px 0;
+  }
+
+  button:hover {
+    filter: saturate(170%);
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+    margin-top: 24px;
+    &:hover {
+      color: blue;
+    }
   }
 `;

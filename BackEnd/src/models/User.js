@@ -4,10 +4,42 @@ const { Model, DataTypes } = require('sequelize');
 class User extends Model {
     static init(sequelize){
         super.init({
-            name: DataTypes.STRING,
-            email: DataTypes.STRING,
-            password: DataTypes.STRING
-        },{
+            name: {
+                type: DataTypes.STRING,
+                allowNull: false,
+                validate: {
+                    notEmpty: {
+                        msg: "Preencha o campo com um nome válido"
+                    },
+                    len: {
+                        args: [3, 20],
+                        msg: "Este campo deve ter entre 3 e 20 caracteres",
+                    }
+
+                }
+            },
+            email: {
+                type: {
+                    type: DataTypes.STRING,
+                    allowNull: false,
+                    validate: {
+                        isEmail: {
+                            msg: "Preencha o campo com um email válido"
+                        },
+            password: {
+                type: DataTypes.STRING,
+                allowNull: false,
+                validate: {
+                    notEmpty: {
+                        msg: "Coloque sua senha"
+                    }
+                }
+
+            }
+        }
+    }
+}
+},{
             sequelize   
         })
     }

@@ -2,12 +2,17 @@
 Projeto: Javascript, NodeJS, ReactJS e MYSQL
 Bibliotecas: Sequelize, Nodemon, Express
 
-# Para baixar o banco de dados
-Na pasta Backend
-1) Criar o arquivo .env
-2) dar o comando, yarn sequelize db:create
-3) dar o comando, yarn sequelize db:migrate
+# Para configurar o sistema
+Digite na pasta BackEnd e na FrontEnd o comando yarn, assim será instalado
+todas as dependências requiridas
 
-# Para testar, é necessário utilizar
+# Para executar, 
+Crie seu arquivo .env a partir do .envsample
+
+# Para configurar o banco de dados do sistema
+Na pasta Backend
+1) dar o comando, yarn sequelize db:create
+2) dar o comando, yarn sequelize db:migrate
+
+# Para utilizar o sistema, é necessário utilizar
 Dar o comando yarn start no Backend e outro yarn start no Frontend
-# comentario teste

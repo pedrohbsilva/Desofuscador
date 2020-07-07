@@ -1,19 +1,35 @@
 :root {
     --primary-color: #179c32;
     --bory-color: #F9F9F9;
+    
+    --color-user: #eee;
+    
+    --button-edit: #17882d;
+    --button-edit-hover: #00ad17;
+    
+    --button-editKey: rgb(107, 107, 107);
+    --button-editkey-hover: #a8a8b3;
+    
+    --button-delit: #9c0000;
+    --button-delit-hover: red;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    outline: none;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
 }
 
-html, body{
-    background: var(--bory-color);
-    font-family: sans-serif;    
-    width: 90%;
-    max-width: 700px;
-    margin: auto;
+html,
+body {
+  background: var(--bory-color);
+  font-family: sans-serif;
+
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }

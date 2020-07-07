@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    margin: 0;
+  text-align: center;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
 
     h1 {
-        
-        margin-top: 10%;
+        margin-top: 20%;
         text-align: center;
     }
     
@@ -34,7 +39,16 @@ export const Container = styled.div`
         width: 100%;
         display: grid;
         color: gray;
-    }   
+    }
+    
+    form .name {
+        display: flex;
+        margin-bottom: 30px;
+    }
+
+    form .name b {
+        margin-left: 15px;
+    }
 
     input{
         margin-top: 10px;

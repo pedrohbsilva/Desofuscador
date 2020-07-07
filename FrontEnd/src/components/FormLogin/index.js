@@ -1,37 +1,36 @@
-import React, { useState } from 'react';
-import api from '../../services/api';
+import React, { useState } from "react";
+import api from "../../services/api";
 
-import './style.css';
+import "./style.css";
 
 export default function FormLogin() {
-    
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-    async function donate() {
-        await api.post('/users', {email, password});
-    }
+  async function signInUser() {
+    await api.post("/users", { email, password });
+  }
 
-    return (
-        <div className="formLogin hideLogin">
-            <h2>Login</h2>
+  return (
+    <div className="formLogin hideLogin">
+      <h2>Login</h2>
 
-            <form onSubmit={donate}>
-                <input
-                    type="email"
-                    placeholder="Seu melhor email"
-                    value={email}
-                    onChange={event => setEmail(event.target.value)}
-                />
-                <input
-                    type="password"
-                    placeholder="Sua melhor senha"
-                    value={password}
-                    onChange={event => setPassword(event.target.value)}
-                />
+      <form onSubmit={signInUser}>
+        <input
+          type="email"
+          placeholder="Digite seu email"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Digite sua senha"
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
+        />
 
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-    );
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  );
 }

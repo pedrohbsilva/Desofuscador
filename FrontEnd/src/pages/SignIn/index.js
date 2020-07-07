@@ -1,21 +1,20 @@
 import React, { Component } from "react";
-import HeaderSignUp from "../../components/HeaderSignUp";
 import Form from "../../components/Form";
 import FormLogin from "../../components/FormLogin";
 import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 
-class SignUp extends Component {
+class SignIn extends Component {
   render() {
     return (
       <>
-        <HeaderSignUp />
+        <Header />
         <Form />
         <FormLogin />
-
         <Footer />
       </>
     );
   }
 }
 
-export default SignUp;
+export default SignIn;
